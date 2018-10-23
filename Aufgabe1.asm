@@ -9,12 +9,12 @@ start:
 	ldi r24, HIGH( RAMEND )
 	out SPH, r24
 
-ldi r24, 0b00000111 ; Pin 10(rot),9(gelb) und 8(grün) am Arduino Uno als Ausgänge gestezt
+ldi r24, 0b00000111 ; Pin 10(rot),9(gelb) und 8(grÃ¼n) am Arduino Uno als AusgÃ¤nge gestezt
 OUT DDRB, r24		;DDR setzten
 
-.def delay_0 = R17 ;Definiere Register R17 für delay_0
-.def delay_1 = R18 ;Definiere Register R18 für delay_1
-.def delay_2 = R19 ;Definiere Register R19 für delay_2
+.def delay_0 = R17 ;Definiere Register R17 fÃ¼r delay_0
+.def delay_1 = R18 ;Definiere Register R18 fÃ¼r delay_1
+.def delay_2 = R19 ;Definiere Register R19 fÃ¼r delay_2
 
 
 main:			   ;Anfang des Programms
@@ -22,57 +22,57 @@ main:			   ;Anfang des Programms
 rcall setdelay
 
 ldi r24, 0b00000100;setze Rote LED an
-OUT PORTB, r24	   ;Übergebe R24 an den Ausgang
+OUT PORTB, r24	   ;Ãœbergebe R24 an den Ausgang
 
-rcall delay		   ;Führe delay aus und komme hierhin zurück(PC+1)
-
-rcall setdelay	   ;Setzte delaywerte
-
-ldi r24, 0b00000010;Gelbe LED an
-OUT PORTB, r24   ;Übergebe R24 an den Ausgang
-
-rcall delay		   ;Führe delay aus und komme hierhin zurück(PC+1)
+rcall delay		   ;FÃ¼hre delay aus und komme hierhin zurÃ¼ck(PC+1)
 
 rcall setdelay	   ;Setzte delaywerte
 
-ldi r24, 0b00000001; Grüne LED an
-OUT PORTB, r24	   ;Übergebe R24 an den Ausgang
+ldi r24, 0b00000010	 ;Gelbe LED an
+OUT PORTB, r24  	 ;Ãœbergebe R24 an den Ausgang
 
-rcall delay		   ;Führe delay aus und komme hierhin zurück(PC+1)
+rcall delay		 ;FÃ¼hre delay aus und komme hierhin zurÃ¼ck(PC+1)
 
-rcall setdelay	   ;Setzte delaywerte
+rcall setdelay	  	 ;Setzte delaywerte
 
-ldi r24, 0b00000010;Gelbe LED an
-OUT PORTB, r24	   ;Übergebe R24 an den Ausgang
+ldi r24, 0b00000001	 ; GrÃ¼ne LED an
+OUT PORTB, r24	  	 ;Ãœbergebe R24 an den Ausgang
 
-rcall delay		   ;Führe delay aus und komme hierhin zurück(PC+1)
+rcall delay		 ;FÃ¼hre delay aus und komme hierhin zurÃ¼ck(PC+1)
 
-rjmp main	       ;Springe zurück nach Loop
+rcall setdelay	  	 ;Setzte delaywerte
+
+ldi r24, 0b00000010	 ;Gelbe LED an
+OUT PORTB, r24	   	 ;Ãœbergebe R24 an den Ausgang
+
+rcall delay	 	 ;FÃ¼hre delay aus und komme hierhin zurÃ¼ck(PC+1)
+
+rjmp main	      	 ;Springe zurÃ¼ck nach Loop
 
 
-delay:			   ;Zeitverzögerung
-	dec delay_2	   ;delay_2 wird um eins gesenkt
-	brne delay	   ;delay_2 wird verglichen
+delay:		  	 ;ZeitverzÃ¶gerung
+	dec delay_2	 ;delay_2 wird um eins gesenkt
+	brne delay	 ;delay_2 wird verglichen
 
-	dec delay_1   ;delay_1 wird um eins gesenkt
-	brne delay	   ;delay_1 wird verglichen
+	dec delay_1 	 ;delay_1 wird um eins gesenkt
+	brne delay	 ;delay_1 wird verglichen
 
-	dec delay_0   ;delay_0 wird um eins gesenkt
-	brne delay	  ;delay_0 wird verglichen
+	dec delay_0   	 ;delay_0 wird um eins gesenkt
+	brne delay	 ;delay_0 wird verglichen
 
 	
-	ret			  ;Gehe zur Rücksprungadresse 	
+	ret		 ;Gehe zur RÃ¼cksprungadresse 	
 
 
 setdelay:
 
-	ldi delay_0, 17	   ;Setzte Register R17(delay_0)
+	ldi delay_0, 17	  ;Setzte Register R17(delay_0)
 	ldi delay_1, 60   ;Setzte Register R18(delay_1)
-	ldi delay_2, 204   ;Setzte Register R19(delay_2)
+	ldi delay_2, 204  ;Setzte Register R19(delay_2)
 
 
 
 
-	ret				   ;Gehe zur Rücksprungadresse 	
+	ret		  ;Gehe zur RÃ¼cksprungadresse 	
 
 
