@@ -7,7 +7,7 @@
 
 #include <avr/io.h>  /*AVR Bibliothek*/
 #define F_CPU 1000000UL /*CPU Takt*/
-#include "util/delay.h" /*Bibliothek für Delayfunktion*/
+#include "util/delay.h" /*Bibliothek fÃ¼r Delayfunktion*/
 
 
 
@@ -23,11 +23,11 @@ int main(void) /*Hauptprogramm*/
 		    PORTB = 0b00000010;  /*LED gelb an*/      
 		    _delay_ms(1000);	 /*warten*/  
 			
-		   PORTB = 0b00000001;	/*LED grün an*/
-		   _delay_ms(1000);		/*warten*/  
+		   PORTB = 0b00000001;	/*LED grÃ¼n an*/
+		   _delay_ms(1000);	/*warten*/  
 		   
 		   PORTB = 0b00000010;	/*LED gelb an*/
-		   _delay_ms(1000);		/*warten*/  
+		   _delay_ms(1000);	/*warten*/  
     }
 	
 	return 0; /*Programm endet mit 0*/
