@@ -41,11 +41,13 @@ int main(void)
 
 
 
-	sei();    //Enable Global Interrupt
+
 
 	DDRB  = 0b00000011;//set LEDs out on Port B
 	DDRD  = 0b00000000;//set Port D as Input
 	PORTD = 0b00001100;// set pullup on INT0 and INT1
+
+		sei();    //Enable Global Interrupt
 
 	while (1)
 	{
