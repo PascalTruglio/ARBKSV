@@ -1,4 +1,7 @@
 #ARBKSV
 
-The first one(Aufgabe1) is a running light on an Arduino Uno with ATMega328P. The code is on assembler.
-The second one(Aufgabe2) is the same as the first one, but the code is on c++.
+1.-3.2 are projects for an Arduino Uno(Atmega328P).
+1- Runninglight in assambly
+2- Runninglight in c++
+3.1- Turn signal polling
+3.2- Turn signal Interrupts
