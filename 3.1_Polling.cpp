@@ -3,7 +3,7 @@
  *
  * Created: 04.11.2018 10:57:56
  * Author : Pascal
- */ 
+ */
 
 #include <avr/io.h>
 #define F_CPU  16000000
@@ -43,10 +43,8 @@ int main(void)
 	DDRD  = 0b00000000;
 	PORTD = 0b00001100;
 	DDRB  = 0b00000011;
-	
-	
-    /* Replace with your application code */
-    while (1) 
+
+    while (1)
     {
 		abfrage();
 		PORTB = 0b00000000;
@@ -57,10 +55,8 @@ int main(void)
 		}
 		else if (state == 2)
 		{
-			PORTB = 0b00000010;	
+			PORTB = 0b00000010;
 		}
 		_delay_ms(200);
-		
-		
     }
 }
